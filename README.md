@@ -45,7 +45,7 @@ tap Прочуствовать разницу.
 
 - перейдите в каталог ras (нам понадобится 2 консоли в этой дирпектории)
 - выполните команду `  $ vagrant up   ` 
-- Выполните команды для создания ключей сертификата
+- На хостовой машине выполните команды для создания ключей сертификата
 ` ssh-keyscan -H 192.168.100.10 >> ~/.ssh/known_hosts `
 ` scp root@192.168.100.10:/etc/openvpn/pki/ca.crt ./ `
 ` scp root@192.168.100.10:/etc/openvpn/pki/issued/client.crt ./ `
@@ -62,8 +62,8 @@ tap Прочуствовать разницу.
 ![alt text](ras/ras1.png "ras")
 
 # Документация
-1. 
-2. 
+1. https://serveradmin.ru/nastroyka-openvpn-na-centos-7/
+2. https://eax.me/openvpn/
 
 
 
