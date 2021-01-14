@@ -41,7 +41,7 @@ tap Прочуствовать разницу.
 Для перехода к проверке стенда Ras выполните удаления стенда Tap с использованием команды `  $ vagrant destroy -f `  будучи в директории tap
 
 ## RAS
-Примечание: На локальной машине требуется пакет openVPN. Убедитесь, что openvpn запущен `sudo service openvpn status` or `sudo systemctl status openvpn`
+**Примечание**: На хостовой машине требуется пакет openVPN. Убедитесь, что openvpn запущен `sudo service openvpn status` or `sudo systemctl status openvpn`
 
 - перейдите в каталог ras (нам понадобится 2 консоли в этой дирпектории)
 - выполните команду `  $ vagrant up   ` 
