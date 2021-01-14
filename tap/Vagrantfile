@@ -1,0 +1,43 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+# RR
+
+MACHINES = {
+  :server => {
+        :box_name => "centos/7",
+        :net => [
+                   {ip: '192.168.100.10', adapter: 2, netmask: "255.255.255.0", virtualbox__intnet: "vpn"},
+                ],
+  },
+  :client => {
+        :box_name => "centos/7",
+        :net => [
+                   {ip: '192.168.100.20', adapter: 2, netmask: "255.255.255.0", virtualbox__intnet: "vpn"},
+                ],
+  },
+}
+###########################################################################################################
+Vagrant.configure("2") do |config|
+  MACHINES.each do |boxname, boxconfig|
+    config.vm.define boxname do |box|
+        box.vm.box = boxconfig[:box_name]
+        box.vm.host_name = boxname.to_s
+        boxconfig[:net].each do |ipconf|
+          box.vm.network "private_network", ipconf
+        end
+        if boxconfig.key?(:public)
+          box.vm.network "public_network", boxconfig[:public]
+        end
+        box.vm.provision "shell", path: "config/sshconfig.sh" 
+        box.vm.provision "ansible" do |ansible|
+         ansible.playbook = "playbook/main.yml"
+      end
+	end
+  end
+     config.vm.define 'server' do |server|
+        server.vm.provision "shell", path: "config/server.sh"  
+    end
+     config.vm.define 'client' do |client|
+        client.vm.provision "shell", path: "config/client.sh"  
+    end
+end
