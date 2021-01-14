@@ -34,7 +34,7 @@ tap Прочуствовать разницу.
 
 ![alt text](tap/tap1.png "server tap")
 
-![alt text](tapn/tap2.png "client tap")
+![alt text](tap/tap2.png "client tap")
 
 Для перехода к проверке стенда Ras выполните удаления стенда Tap с использованием команды `  $ vagrant destroy -f `  будучи в директории tap
 
