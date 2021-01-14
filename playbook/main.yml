@@ -1,5 +1,0 @@
----
-- hosts: main
-  become: True
-  roles:
-    - ovpn
