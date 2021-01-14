@@ -12,14 +12,13 @@ tap Прочуствовать разницу.
 - после подъема стенда выполнте вход на server и client в отдельных терминалах
      `  $ vagrant ssh client ` 
      `  $ vagrant ssh server ` 
-- Выполните повышение полномочий на клиенте и сервере   `  $ sudo -i ` 
 - На server запустите приложение iperf3 в режиме сервер  `   $ iperf3 -s & ` 
 - На client запустите приложение iperf3 в режиме слиента   `  $ iperf3 -c 10.10.10.1 -t 40 -i 5  ` 
 - Результаты теста скорости в режиме работы TUN:
 
-![alt text](tun/p1.png "server tun")
+![alt text](tun/tun1.png "server tun")
 
-![alt text](tun/p2.png "client tun")
+![alt text](tun/tun2.png "client tun")
 
 Для перехода к проверке стенда Tap выполните удаления стенда Tun с использованием команды `  $ vagrant destroy -f `  будучи в директории tun
 
@@ -29,10 +28,15 @@ tap Прочуствовать разницу.
 - после подъема стенда выполнте вход на server и client в отдельных терминалах
      `  $ vagrant ssh client  ` 
      `  $ vagrant ssh server  ` 
-- Выполните повышение полномочий на клиенте и сервере   ` $ sudo -i  ` 
 - На server запустите приложение iperf3 в режиме сервер  `   $ iperf3 -s & ` 
 - На client запустите приложение iperf3 в режиме слиента   `  $ iperf3 -c 10.10.10.1 -t 40 -i 5  `       
+- Результаты теста скорости в режиме работы TAP:
 
+![alt text](tap/tap1.png "server tap")
+
+![alt text](tapn/tap2.png "client tap")
+
+Для перехода к проверке стенда Ras выполните удаления стенда Tap с использованием команды `  $ vagrant destroy -f `  будучи в директории tap
 
 
 
