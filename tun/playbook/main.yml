@@ -1,0 +1,27 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: Устанавливаем epel-репозиторий
+    yum:
+      name: epel-release
+      state: present
+    tags:
+      - epel-package
+      - packages
+
+  - name: install packages
+    yum:
+      name: "{{ packages }}"
+      state: present
+    vars:
+      packages:
+      - bind
+      - bind-utils
+      - mc
+      - nano
+      - openvpn
+      - iperf3
+      - sshpass 
+
