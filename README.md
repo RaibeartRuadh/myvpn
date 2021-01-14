@@ -31,9 +31,9 @@ tap Прочуствовать разницу.
 
 - Результаты теста скорости в режиме работы TUN:
 
-![alt text](tun/pic1.png "server tun")
+![alt text](tun/p1.png "server tun")
 
-![alt text](tun/pic2.png "client tun")
+![alt text](tun/p2.png "client tun")
 
 
 
